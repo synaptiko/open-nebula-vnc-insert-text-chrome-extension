@@ -1,0 +1,22 @@
+{
+  "name": "Insert text to OpenNebula VNC",
+  "version": "0.1",
+  "page_action": {
+    "default_title": "Insert text to OpenNebula VNC",
+    "default_popup": "popup.html"
+  },
+	"background": {
+		"persistent": false,
+		"scripts": ["background.js"]
+	},
+  "permissions": [
+		"https://opennebula.wedos.cloud/*",
+    "declarativeContent"
+  ],
+  "manifest_version": 2,
+  "content_scripts": [{
+		"js": ["content_script.js"],
+		"matches": ["https://opennebula.wedos.cloud/vnc*"],
+		"run_at": "document_start"
+	}]
+}
